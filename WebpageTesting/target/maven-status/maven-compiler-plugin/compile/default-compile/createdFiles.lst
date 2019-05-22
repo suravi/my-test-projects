@@ -1,2 +1,8 @@
-mypackage\myclass.class
-myclass.class
+pages\GoogleSearchPage.class
+ultimateQAautomation\SignInPageTest.class
+ultimateQApageObject\UltimateQAPage.class
+ultimateQApageObject\SignInPage.class
+pages\GoogleSearchpageObject.class
+test\GoogleSearchPageTest.class
+ultimateQAautomation\UltimateQATest.class
+test\googlesearch.class

@@ -3,6 +3,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import ultimateQApageObject.SignInPage;
 
@@ -19,9 +22,14 @@ public class SignInPageTest {
 	
 	public void invokeBrowser() {
 		try {
+			
+			WebDriverManager.chromedriver().setup();
+			//WebDriverManager.firefoxdriver().setup();
+			
 			System.out.println("invokingBrowser from POM version");
-			System.setProperty("webdriver.chrome.driver", "C:\\chrome driver\\chromedriver_win32\\chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "C:\\chrome driver\\chromedriver_win32\\chromedriver.exe");
 			driver = new ChromeDriver();
+			//driver= new FirefoxDriver();
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
