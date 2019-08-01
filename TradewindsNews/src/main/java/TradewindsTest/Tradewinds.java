@@ -3,7 +3,6 @@
  */
 package TradewindsTest;
 import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -28,10 +27,12 @@ public class Tradewinds {
 		home.homepage();
 		home.closeBrowser();
 	}
+	
+	
 	public void invokeBrowser() {
 		try {
 			System.out.println("invokingBrowser from POM version");
-		// initialte browser using webdriver manager code
+		// initiate browser using webDriver manager code
 		/*	WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();*/
 			

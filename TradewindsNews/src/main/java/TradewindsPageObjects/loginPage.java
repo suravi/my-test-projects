@@ -23,9 +23,8 @@ public class loginPage {
 
 	
 	public void signin() {
-		System.out.println("In POM");
 		driver.findElement(loginmenu).click();
-		System.out.println("clicking dropdown");
+		System.out.println("clicking login Menu");
 		driver.findElement(userename).sendKeys("testuser");
 		driver.findElement(userpassword).sendKeys("testuser");
 		driver.findElement(loginbutton).click();
