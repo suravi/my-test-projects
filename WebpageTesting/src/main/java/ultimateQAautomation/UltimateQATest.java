@@ -4,6 +4,9 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 import ultimateQApageObject.*;
 
 public class UltimateQATest {
@@ -15,10 +18,10 @@ public class UltimateQATest {
 	//	Browser browser= new Browser(driver);
 	//	browser.browseropen(driver);
 		home.invokeBrowser();
-	//	home.homepage();
+		home.homepage();
 		home.Signin();
 		
-	//	home.closeBrowser();
+		home.closeBrowser();
 		//browser.closeBrowser();
 
 	}
@@ -27,8 +30,16 @@ public class UltimateQATest {
 	public void invokeBrowser() {
 		try {
 			System.out.println("invokingBrowser from POM version");
-			System.setProperty("webdriver.chrome.driver", "C:\\chrome driver\\chromedriver_win32\\chromedriver.exe");
-			driver = new ChromeDriver();
+			// initiate browser by showing binary manually
+			/* System.setProperty("webdriver.chrome.driver", "C:\\chrome driver\\chromedriver_win32\\chromedriver.exe");
+			driver = new ChromeDriver();*/
+			
+		// initialte browser using webdriver manager code
+		/*	WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();*/
+			
+			WebDriverManager.firefoxdriver().setup();
+			driver= new FirefoxDriver();
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
